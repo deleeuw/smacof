@@ -15,8 +15,8 @@ code.
   
 That makes 56 programs. They share some code, which will eventually all
 be in the common directory, and they share a common include file 
-smacof.h. For now all smacofXXX.c file have a main() as a driver
-for the basoc subroutines, applied to an example.
+smacof.h. For now all smacofXXX.c files have a main() as a driver
+for the basic subroutines, which are applied to an example.
 
 The code accompanies the book "Least Squares Euclidean Multidimensional Scaling".
 
