@@ -28,7 +28,7 @@ void smacofBlockSort(const double *x, const double *w, const int n, int nblock,
         xi[i].weight = w[i];
         xi[i].index = i;
     }
-    (void)qsort(xi, (size_t)n, (size_t)sizeof(triple), myComp);
+    (void)qsort(xi, (size_t)n, (size_t)sizeof(triple), sortComp);
     int counter = 0;
     while (counter < n) {
         double value = xi[counter].value;
@@ -71,6 +71,7 @@ void smacofBlockSort(const double *x, const double *w, const int n, int nblock,
     return;
 }
 
+/*
 double x1[10] = {3.0, 1.0, 1.0, 5.0, 1.0, 5.0, 1.0, 2.0, 5.0, 2.0};
 double x2[10] = {1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0};
 double x3[10] = {0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0};
@@ -80,10 +81,11 @@ int n = 10;
 int main() {
     block *yi = NULL;
     int nblock = 1;
-    (void)myBlockSort(x1, ww, n, nblock, yi);
+    (void)smacofBlockSort(x1, ww, n, nblock, yi);
     printf("**********************************\n");
-    (void)myBlockSort(x2, ww, n, nblock, yi);
+    (void)smacofBlockSort(x2, ww, n, nblock, yi);
     printf("**********************************\n");
-    (void)myBlockSort(x3, ww, n, nblock, yi);
+    (void)smacofBlockSort(x3, ww, n, nblock, yi);
     free(yi);
 }
+*/
