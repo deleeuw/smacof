@@ -13,7 +13,7 @@ but it can be used as a preprocessor for any monotone regression problem.
 #include "../include/smacof.h"
 
 
-int sortComp(const void *px, const void *py) {
+int smacofCompare(const void *px, const void *py) {
     double x = ((struct triple *)px)->value;
     double y = ((struct triple *)py)->value;
     return (int)copysign(1.0, x - y);
@@ -28,7 +28,7 @@ void smacofBlockSort(const double *x, const double *w, const int n, int nblock,
         xi[i].weight = w[i];
         xi[i].index = i;
     }
-    (void)qsort(xi, (size_t)n, (size_t)sizeof(triple), sortComp);
+    (void)qsort(xi, (size_t)n, (size_t)sizeof(triple), smacofCompare);
     int counter = 0;
     while (counter < n) {
         double value = xi[counter].value;

@@ -39,15 +39,15 @@ typedef struct block {
     int *indices;
 } block;
 
-void primat(const int, const int, const int, const int, const double *);
-void pritrl(const int, const int, const int, const double *);
+void smacofPrintMatrix(const int, const int, const int, const int, const double *);
+void smacofPrintTriangle(const int, const int, const int, const double *);
 void smacofDist(const double *, const int, const int, double *);
 void smacofDoubleCenter(double *, const int);
 void smacofDCMultX(const double *, double *, const int, const int);
-int sortComp(const void *, const void *);
+int smacofCompare(const void *, const void *);
 void smacofBlockSort(const double *, const double *, const int, int, block *);
-void dencode(const int *, const int *, const int *, int *);
-void ddecode(const int *, const int *, int *, int *);
+void smacofEncode(const int *, const int *, const int *, int *);
+void smacofDecode(const int *, const int *, int *, int *);
 
 double smacofLossW(const double *, const double *, const double *, const int);
 double smacofLossU(const double *, const double *, const int);

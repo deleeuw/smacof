@@ -1,12 +1,12 @@
 #include "../include/smacof.h"
 
-void dencode(const int *ip, const int *jp, const int *np, int *kp) {
+void smacofEncode(const int *ip, const int *jp, const int *np, int *kp) {
     int i = *ip, j = *jp, n = *np;
     *kp = i + (j - 1) * n - j * (j + 1) / 2;
     return;
 }
 
-void ddecode(const int *kp, const int *np, int *ip, int *jp) {
+void smacofDecode(const int *kp, const int *np, int *ip, int *jp) {
     int j = 1, m = 1, k = *kp, n = *np;
     while (k >= ((j * n) - m + 1)) {
         j += 1;
