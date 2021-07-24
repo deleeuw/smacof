@@ -26,15 +26,17 @@ typedef enum transform {
 
 typedef enum ties { primary = 1, secondary = 2, tertiary = 3 } ties;
 
-typedef struct couple {
+typedef struct triple {
     double value;
+    double weight;
     int index;
-} couple;
+} triple;
 
 typedef struct block {
     double value;
     int size;
-    int rank;
+    double *weights;
+    int *indices;
 } block;
 
 void primat(const int, const int, const int, const int, const double *);
@@ -42,10 +44,10 @@ void pritrl(const int, const int, const int, const double *);
 void smacofDist(const double *, const int, const int, double *);
 void smacofDoubleCenter(double *, const int);
 void smacofDCMultX(const double *, double *, const int, const int);
-int myComp(const void *, const void *);
-void myBlockSort(const double *, const int, int *, couple *, block *);
-
-
+int sortComp(const void *, const void *);
+void smacofBlockSort(const double *, const double *, const int, int, block *);
+void dencode(const int *, const int *, const int *, int *);
+void ddecode(const int *, const int *, int *, int *);
 
 double smacofLossW(const double *, const double *, const double *, const int);
 double smacofLossU(const double *, const double *, const int);
@@ -99,7 +101,7 @@ static inline int MINDEX(const int i, const int j, const int n) {
 //  for (int j = 1; j < (n - 1); j++) {
 //    for (int i = (j + 1); i<= n; i++) {
 //    }
-//..}
+//    }
 //
 
 static inline int SINDEX(const int i, const int j, const int n) {

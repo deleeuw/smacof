@@ -46,7 +46,7 @@ void smacofDoubleCenter(double *x, const int n) {
 }
 
 // multiply doubly centered symmetric matrix stored in strictly lower
-// triangular form (without diagonal) with a general matrix
+// triangular form (with implicit diagonal) with a general matrix
 
 void smacofDCMultX(const double *dcmat, double *x, const int n, const int p) {
   double t = 0.0, u = 0.0;
