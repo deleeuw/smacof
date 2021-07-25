@@ -39,19 +39,21 @@ typedef struct block {
     int *indices;
 } block;
 
+int smacofCompare(const void *, const void *);
+
 void smacofPrintMatrix(const int, const int, const int, const int, const double *);
 void smacofPrintTriangle(const int, const int, const int, const double *);
-void smacofDist(const double *, const int, const int, double *);
 void smacofDoubleCenter(double *, const int);
 void smacofDCMultX(const double *, double *, const int, const int);
-int smacofCompare(const void *, const void *);
 void smacofBlockSort(const double *, const double *, const int, int, block *);
 void smacofEncode(const int *, const int *, const int *, int *);
 void smacofDecode(const int *, const int *, int *, int *);
+void smacofDistances(const double *, const int, const int, double *);
 
 double smacofLossW(const double *, const double *, const double *, const int);
 double smacofLossU(const double *, const double *, const int);
 
+void smacofNormW(double *, const int);
 void smacofNormDeltaW(const double *, double *, const int);
 void smacofNormDeltaU(double *, const int);
 
@@ -75,7 +77,7 @@ void smacofIntervalW(const double *, const double *, double *, int);
 
 void smacofMissingU(const double *, double *, int);
 
-void smacofSSWR(double *, const double *, double *, const int *, const int *,
+void smacofSSWR(double *, double *, double *, const int *, const int *,
                 const bool *, const int *, const double *, const bool *);
 void smacofSSUR(double *, double *, const int *, const int *, const bool *,
                 const int *, const double *, const bool *);

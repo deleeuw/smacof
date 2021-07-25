@@ -1,8 +1,8 @@
-smacofSSWR: smacofSSWR.c ../common/smacofPrint.c ../common/smacofUtils.c
-	clang -o smacofSSWR smacofSSWR.c ../common/smacofPrint.c ../common/smacofUtils.c
+smacofSSWR: Makefile smacofSSWR.c ../common/smacofPrint.c ../common/smacofUtils.c ../common/smacofCoreW.c ../include/smacof.h
+	clang -o smacofSSWR smacofSSWR.c ../common/smacofPrint.c ../common/smacofUtils.c ../common/smacofCoreW.c
 
 rlib: 
-	R CMD SHLIB smacofSSWR.c ../common/smacofPrint.c ../common/smacofUtils.c
+	R CMD SHLIB smacofSSWR.c ../common/smacofPrint.c ../common/smacofUtils.c ../common/smacofCoreW.c
 
 clean:
 	rm -rf *.o ../common/*.o core a.out

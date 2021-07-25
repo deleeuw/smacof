@@ -1,4 +1,4 @@
-smacofSSUO.c ../common/smacofPrint.c ../common/smacofUtils.c
+smacofSSUO: smacofSSUO.c ../common/smacofPrint.c ../common/smacofUtils.c
 	clang -o smacofSSUO smacofSSUO.c ../common/smacofPrint.c ../common/smacofUtils.c
 
 rlib: 

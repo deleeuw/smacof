@@ -2,7 +2,7 @@
 
 // Euclidean distances
 
-void smacofDist(const double *x, const int n, const int p, double *dist) {
+void smacofDistances(const double *x, const int n, const int p, double *dist) {
   for (int j = 1; j <= (n - 1); j++) {
     for (int i = j + 1; i <= n; i++) {
       double d = 0.0;

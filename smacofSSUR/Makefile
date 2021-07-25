@@ -1,8 +1,8 @@
-smacofSSUR: smacofSSUR.c ../common/smacofPrint.c ../common/smacofUtils.c
-	clang -o smacofSSUR smacofSSUR.c ../common/smacofPrint.c ../common/smacofUtils.c
+smacofSSUR: Makefile smacofSSUR.c ../common/smacofPrint.c ../common/smacofUtils.c  ../common/smacofCoreU.c ../include/smacof.h
+	clang -o smacofSSUR smacofSSUR.c ../common/smacofPrint.c ../common/smacofUtils.c ../common/smacofCoreU.c
 
 rlib: 
-	R CMD SHLIB smacofSSUR.c ../common/smacofPrint.c ../common/smacofUtils.c
+	R CMD SHLIB smacofSSUR.c ../common/smacofPrint.c ../common/smacofUtils.c ../common/smacofCoreU.c
 
 clean:
 	rm -rf *.o ../common/*.o core a.out

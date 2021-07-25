@@ -6,15 +6,15 @@ int main() {
   int n = 4, p = 2, itmax = 100;
   bool verbose = true, speedup = false;
   double eps = 1e-15;
-  (void)smacofSSUM(delta, x, &n, &p, &speedup, &itmax, &eps, &verbose);
+  (void)smacofSSUO(delta, x, &n, &p, &speedup, &itmax, &eps, &verbose);
   printf("\n\n");
-  (void)primat(4, 2, 15, 10, x);
+  (void)smacofPrintMatrix(4, 2, 15, 10, x);
   double *dist = (double *)calloc((size_t)6, sizeof(double));
   (void)smacofDist(x, n, p, dist);
-  (void)primat(1, 6, 15, 10, delta);
-  (void)primat(1, 6, 15, 10, dist);
+  (void)smacofPrintMatrix(1, 6, 15, 10, delta);
+  (void)smacofPrintMatrix(1, 6, 15, 10, dist);
   (void)smacofGradientU(dist, delta, n, p, x);
-  (void)primat(4, 2, 15, 10, x);
+  (void)smacofPrintMatrix(4, 2, 15, 10, x);
   free(dist);
   return EXIT_SUCCESS;
 }
