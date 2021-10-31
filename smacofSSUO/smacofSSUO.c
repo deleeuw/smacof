@@ -34,6 +34,8 @@ void smacofSSUO(double *delta, double *x, const int *nobjects,
   (void)smacofScaleXU(x, dist, delta, m, np);
   // compute initial stress
   sold = smacofLossU(dist, delta, m);
+  // make the ordinal structure
+  (void) smacofBlockSort(delta, NULL, m, 1,NULL);
   while (true > false) {
     (void)smacofGuttmanU(dist, delta, n, p, acc, x);
     (void)smacofDist(x, n, p, dist);

@@ -1,0 +1,9 @@
+-I/usr/local/include
+-I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1
+-I/Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include
+-I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
+-I/Library/Developer/CommandLineTools/usr/include
+-I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks
+-I/Users/deleeuw/Desktop/smacof/smacofSSUI
+-target
+x86_64-apple-darwin21.2.0

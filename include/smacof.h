@@ -110,7 +110,9 @@ static inline int SINDEX(const int i, const int j, const int n) {
    return ((j - 1) * n) - (j * (j - 1) / 2) + (i - j) - 1;
 }
 
-static inline double SQUARE(const double x) { return x * x; }
+static inline double SQUARE(const double x) { 
+  return x * x; 
+}
 
 static inline double MAX(const double x, const double y) {
   return (x > y) ? x : y;
@@ -120,8 +122,12 @@ static inline double MIN(const double x, const double y) {
   return (x < y) ? x : y;
 }
 
-static inline int IMAX(const int x, const int y) { return (x > y) ? x : y; }
+static inline int IMAX(const int x, const int y) { 
+  return (x > y) ? x : y; 
+}
 
-static inline int IMIN(const int x, const int y) { return (x < y) ? x : y; }
+static inline int IMIN(const int x, const int y) { 
+  return (x < y) ? x : y; 
+}
 
 #endif /* SMACOF_H */

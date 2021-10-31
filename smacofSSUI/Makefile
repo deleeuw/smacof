@@ -1,15 +1,8 @@
-smacofSSUI: Makefile smacofSSUI.c ../common/smacofPrint.c ../common/smacofUtils.c ../common/smacofCoreU.c ../include/smacof.h
-	clang -o smacofSSUI smacofSSUI.c ../common/smacofPrint.c  ../common/smacofUtils.c ../common/smacofCoreU.c
+.PHONY: clean All
 
-rlib: 
-	R CMD SHLIB smacofSSUI.c ../common/smacofPrint.c ../common/smacofUtils.c ../common/smacofCoreU.c
-
+All:
+	@echo "----------Building project:[ smacofSSUI - Debug ]----------"
+	@"$(MAKE)" -f  "smacofSSUI.mk"
 clean:
-	rm -rf *.o ../common/*.o core a.out
-
-pristine:
-	rm -rf smacofSSUI smacofSSUI.so
-
-format:
-	clang-format -i *.c
-
+	@echo "----------Cleaning project:[ smacofSSUI - Debug ]----------"
+	@"$(MAKE)" -f  "smacofSSUI.mk" clean
